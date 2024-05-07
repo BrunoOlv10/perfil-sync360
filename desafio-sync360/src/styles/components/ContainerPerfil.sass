@@ -1,0 +1,32 @@
+@use '../../variables'
+    
+.img-degrade 
+    height: 8rem
+    width: 8rem
+    background: variables.$gradient
+    border: 5px solid transparent
+    border-radius: 50%
+    transition: transform .5s
+
+    &:hover
+        transform: scale(1.1)
+
+img 
+    height: 8rem
+    width: 8rem
+    background-color: #1d1d1d
+    position: relative
+    border-radius: 50%
+
+.infos
+    display: grid
+    grid-template-columns: 12vw 20vw
+
+
+p
+   margin-top: 23%
+
+.dados
+    background-color: #1d1d1d
+    margin-top: 2rem
+    height: 30px

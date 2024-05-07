@@ -1,0 +1,29 @@
+@use '../../variables'
+    
+form
+    display: grid
+    grid-template-columns: 12vw 20vw
+    align-items: center
+    justify-content: center
+    min-height: 87vh
+
+label, input, textarea
+    margin-top: 2rem
+
+label 
+    margin-right: 1rem
+
+input
+    height: 25px
+
+input[type='submit']
+    cursor: pointer
+    width: 10rem
+    background: variables.$gradient
+    border: none
+    border-radius: 5px
+    color: #fff
+    transition: transform .5s
+
+    &:hover
+        transform: scale(1.1)
