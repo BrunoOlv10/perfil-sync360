@@ -8,22 +8,24 @@ const ContainerForm = () => {
         <div className='card'>
             <h2>Atualizar Perfil</h2>
             <div className='img-degrade'>
-                <img src="" />
+              <div className='img'></div>
             </div>
-            <form>
-                <label htmlFor="name">Nome: </label>
+            <form className='infos'>
+                <label htmlFor="name" className='categoria'>Nome</label>
                 <input type="text" id='name' />
-                <label htmlFor="idade">Idade: </label>
+                <label htmlFor="idade" className='categoria'>Idade</label>
                 <input type="text" id='idade' />
-                <label htmlFor="rua">Rua: </label>
+                <label htmlFor="rua" className='categoria'>Rua</label>
                 <input type="text" id='rua' />
-                <label htmlFor="bairro">Bairro: </label>
+                <label htmlFor="bairro" className='categoria'>Bairro</label>
                 <input type="text" id='bairro' />
-                <label htmlFor="estado">Estado: </label>
+                <label htmlFor="estado" className='categoria'>Estado</label>
                 <input type="text" id='estado' />
-                <label htmlFor="biografia">Biografia: </label>
-                <textarea name="biografia" id="biografia" rows="10"></textarea>
             </form>
+                <div className="biografia">
+                  <label htmlFor="biografia" id='label-biografia'>Biografia: </label>
+                </div>
+                  <textarea name="biografia" rows="10"></textarea>
                 <input type="submit" value="Atualizar" />
         </div>
     </div>

@@ -1,5 +1,8 @@
 @use '../../variables'
     
+.inicio
+    margin-bottom: 4.5rem
+
 .img-degrade 
     height: 8rem
     width: 8rem
@@ -7,11 +10,12 @@
     border: 5px solid transparent
     border-radius: 50%
     transition: transform .5s
+    margin-bottom: 1rem
 
     &:hover
         transform: scale(1.1)
 
-img 
+.img 
     height: 8rem
     width: 8rem
     background-color: #1d1d1d
@@ -20,13 +24,20 @@ img
 
 .infos
     display: grid
-    grid-template-columns: 12vw 20vw
+    grid-template-columns: 10vw 20vw
+    min-height: 67vh
+    justify-content: center
 
-
-p
-   margin-top: 23%
+.categoria
+   margin-top: 3rem
 
 .dados
     background-color: #1d1d1d
-    margin-top: 2rem
-    height: 30px
+    margin-top: 2.5rem
+    height: 2rem
+
+.especial
+    background-color: #1d1d1d
+    height: 30vw
+    width: 30vw
+    margin-top: 0.5rem
