@@ -1,7 +1,7 @@
 import styles from '../styles/components/ContainerPerfil.sass';
 import '../styles/components/App.sass'
 
-const Container = () => {
+const ContainerPerfil = () => {
   return (
     <div className='container inicio'>
       <div className='card'>
@@ -20,14 +20,14 @@ const Container = () => {
           <div className='dados'></div>
           <label className='categoria'>Estado</label>
           <div className='dados'></div>
-        </div>
           <div className='biografia'>
             <label id='biografia-perfil'>Biografia:</label>
           </div>
             <div className='especial'></div>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Container
+export default ContainerPerfil
