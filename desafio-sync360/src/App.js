@@ -4,7 +4,7 @@ import ContainerPerfil from './components/ContainerPerfil';
 import './styles/components/App.sass'
 
 function App() {
-  const [perfil, setPerfil] = useState({
+  const [dadosPerfil, setDadosPerfil] = useState({
     nome: '',
     idade: '',
     rua: '',
@@ -12,15 +12,16 @@ function App() {
     estado: '',
     biografia: ''
   })
+  const [imagemPerfil, setImagemPerfil] = useState(null);
 
-  const atualizarPerfil = (dadosPerfil) => {
-    setPerfil(dadosPerfil)
+  const atualizarPerfil = (novosDados) => {
+    setDadosPerfil(novosDados)
   }
 
   return (
     <div className="App">
-      <ContainerPerfil />
-      <ContainerForm atualizarPerfil={atualizarPerfil}/>
+      <ContainerPerfil dadosPerfil={dadosPerfil} imagemPerfil={imagemPerfil}/>
+      <ContainerForm atualizarPerfil={atualizarPerfil} setImagemPerfil={setImagemPerfil}/>
     </div>
   );
 }
