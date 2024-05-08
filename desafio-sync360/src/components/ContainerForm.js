@@ -110,13 +110,15 @@ const handleKeyPress = (event) => {
                 <label htmlFor="estado" className='categoria'>Estado</label>
                 <input type="text" className='dados-escritos' name='estado' value={dadosFormulario.estado} onChange={handleChange}/>
               </div>
-                <div className="biografia-form">
-                  <label htmlFor="biografia">
-                    Biografia
-                  </label>
+                <div className='container-biografia'>
+                  <div className="biografia-form">
+                    <label htmlFor="biografia">
+                      Biografia
+                    </label>
+                  </div>
+                    <textarea name="biografia" value={dadosFormulario.biografia} onChange={handleChange}></textarea>
+                    <button onClick={handleAtualizar}>Atualizar</button>
                 </div>
-                  <textarea name="biografia" value={dadosFormulario.biografia} onChange={handleChange}></textarea>
-                  <button onClick={handleAtualizar}>Atualizar</button>
             </form>
         </div>
     </div>

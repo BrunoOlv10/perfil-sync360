@@ -7,10 +7,12 @@ const ContainerPerfil = ({dadosPerfil}) => {
   return (
     <div className='container inicio'>
       <div className='card'>
-        <h2>Olá, {dadosPerfil.nome}!</h2>
+      <h2>Olá, {dadosPerfil.nome ? dadosPerfil.nome : 'usuário'}!</h2>
         <div className='img-degrade'>
           <div className='img'>
-          {dadosPerfil.imagem && <img src={dadosPerfil.imagem} alt="Imagem do perfil"  />}
+          {dadosPerfil.imagem && dadosPerfil.imagem !== 'null' && (
+            <img src={dadosPerfil.imagem} alt='Imagem do perfil' />
+          )}
           </div>
         </div>
         <div className='infos'>
