@@ -99,16 +99,16 @@ const handleKeyPress = (event) => {
                 <label htmlFor="imagem" className='categoria'>Imagem</label>
                 <input type="file" className='enviar-imagem' name='imagem' accept="image/*" onChange={handleImagemChange}/>
                 <label htmlFor="name" className='categoria'>Nome</label>
-                <input type="text" className='dados-escritos' name='nome' value={dadosFormulario.nome} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='nome' value={dadosFormulario.nome} onChange={handleChange}/>
                 <label htmlFor="idade" className='categoria'>Idade</label>
-                <input type="number" className='dados-escritos' name='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
-                {errorMessage && <span className="error-tooltip">{errorMessage}</span>}
+                <input type="number" placeholder='Idade real' className='dados-escritos' name='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
+                {errorMessage && <div className='container-error'><span className="error-tooltip">{errorMessage}</span></div>}
                 <label htmlFor="rua" className='categoria'>Rua</label>
-                <input type="text" className='dados-escritos' name='rua' value={dadosFormulario.rua} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='rua' value={dadosFormulario.rua} onChange={handleChange}/>
                 <label htmlFor="bairro" className='categoria'>Bairro</label>
-                <input type="text" className='dados-escritos' name='bairro' value={dadosFormulario.bairro} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='bairro' value={dadosFormulario.bairro} onChange={handleChange}/>
                 <label htmlFor="estado" className='categoria'>Estado</label>
-                <input type="text" className='dados-escritos' name='estado' value={dadosFormulario.estado} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='estado' value={dadosFormulario.estado} onChange={handleChange}/>
               </div>
                 <div className='container-biografia'>
                   <div className="biografia-form">
@@ -116,7 +116,7 @@ const handleKeyPress = (event) => {
                       Biografia
                     </label>
                   </div>
-                    <textarea name="biografia" value={dadosFormulario.biografia} onChange={handleChange}></textarea>
+                    <textarea name="biografia" placeholder='Escreva uma breve biografia' maxLength='1600' value={dadosFormulario.biografia} onChange={handleChange}></textarea>
                     <button onClick={handleAtualizar}>Atualizar</button>
                 </div>
             </form>
