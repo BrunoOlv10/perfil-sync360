@@ -5,7 +5,7 @@ import '../styles/components/ContainerPerfil.sass'
 import '../styles/components/ContainerForm.sass'
 
 const ContainerForm = ({atualizarPerfil}) => {
-  const [dadosFormulario, setDadosFormulario] = useState({
+  const initialValues = {
     imagem: 'null',
     nome: '',
     idade: '',
@@ -13,16 +13,58 @@ const ContainerForm = ({atualizarPerfil}) => {
     bairro: '',
     estado: '',
     biografia: ''
-  })
-  // const [enviado, setEnviado] = useState(false)
+  }
+
+  const [dadosFormulario, setDadosFormulario] = useState({...initialValues })
+
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const [validForm, setValidForm] = useState(true);
 
   const handleChange = (event) => {
     const {name, value} = event.target
-    setDadosFormulario({
-      ...dadosFormulario,
-      [name]: value,
-    })
+    if (name === 'idade') {
+      const newValue = value.slice(0, 3);
+      if (parseInt(newValue) > 130) {
+        setErrorMessage('Coloque uma idade menor!');
+        setValidForm(false);
+        setTimeout(() => {
+          setErrorMessage('');
+          setDadosFormulario({
+            ...dadosFormulario,
+            [name]: value.length <= 3 ? value : value.slice(0, 3),
+          });
+        }, 4000);
+      } else {
+        setErrorMessage('');
+        setValidForm(true);
+      }
+      setDadosFormulario({
+        ...dadosFormulario,
+        [name]: newValue,
+      })
+    } else {
+      setDadosFormulario({
+        ...dadosFormulario,
+        [name]: value,
+      })
+    }
   }
+
+const handleCheck = (event) => {
+  event.preventDefault();
+  if (errorMessage) {
+    return;
+  }
+  // console.log('Formulário enviado');
+  handleSubmit(event)
+};
+
+const handleKeyPress = (event) => {
+  if (event.target.name === 'idade' && !/\d/.test(event.key)) {
+    event.preventDefault();
+  }
+};
 
   const handleImagemChange = (event) => {
     const imagemSelecionada = event.target.files[0]
@@ -34,13 +76,18 @@ const ContainerForm = ({atualizarPerfil}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('Dados do formulário enviados:', dadosFormulario)
-    atualizarPerfil(dadosFormulario)
-    // setEnviado(true)
+    // console.log('Dados do formulário enviados:', dadosFormulario)
+    if (validForm) {
+      atualizarPerfil(dadosFormulario)
+    }
   }
-
+  
   const handleAtualizar = (event) => {
-    handleSubmit(event)
+    event.preventDefault()
+    if (parseInt(dadosFormulario.idade <= 130)) {
+      handleSubmit(event)
+    }
+    handleCheck(event)
   }
 
   return (
@@ -54,7 +101,8 @@ const ContainerForm = ({atualizarPerfil}) => {
                 <label htmlFor="name" className='categoria'>Nome</label>
                 <input type="text" className='dados-escritos' name='nome' value={dadosFormulario.nome} onChange={handleChange}/>
                 <label htmlFor="idade" className='categoria'>Idade</label>
-                <input type="text" className='dados-escritos' name='idade' value={dadosFormulario.idade} onChange={handleChange}/>
+                <input type="number" className='dados-escritos' name='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
+                {errorMessage && <span className="error-tooltip">{errorMessage}</span>}
                 <label htmlFor="rua" className='categoria'>Rua</label>
                 <input type="text" className='dados-escritos' name='rua' value={dadosFormulario.rua} onChange={handleChange}/>
                 <label htmlFor="bairro" className='categoria'>Bairro</label>
