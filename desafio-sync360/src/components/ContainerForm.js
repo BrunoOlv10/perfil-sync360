@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import '../styles/components/App.sass'
 import '../styles/components/ContainerPerfil.sass'
 import '../styles/components/ContainerForm.sass'
+import '../styles/components/MediaQueries.sass'
 
 const ContainerForm = ({atualizarPerfil}) => {
   const initialValues = {
@@ -110,6 +111,17 @@ const handleImagemChange = (event) => {
     }
     handleCheck(event)
   }
+
+  const removerMensagem = () => {
+    const inputs = document.querySelectorAll('.enviar-imagem');
+    inputs.forEach(input => {
+      input.setAttribute('title', '');
+    });
+  };
+
+  useEffect(() => {
+    removerMensagem();
+  }, []);
 
   return (
     <div className='container'>

@@ -2,10 +2,11 @@ import React from 'react'
 
 import '../styles/components/ContainerPerfil.sass';
 import '../styles/components/App.sass'
+import '../styles/components/MediaQueries.sass'
 
 const ContainerPerfil = ({dadosPerfil}) => {
   return (
-    <div className='container inicio'>
+    <div className='container'>
       <div className='card'>
       <h2>Olá, {dadosPerfil.nome ? dadosPerfil.nome : 'Sync360'}!</h2>
         <div className='img-degrade'>
