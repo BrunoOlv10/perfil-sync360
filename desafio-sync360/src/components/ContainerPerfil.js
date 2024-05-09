@@ -29,7 +29,7 @@ const ContainerPerfil = ({dadosPerfil}) => {
           <div className='biografia-perfil'>
             <label>Biografia</label>
           </div>
-            <div className='especial'>{dadosPerfil.biografia}</div>
+            <div className='biografia-especial'>{dadosPerfil.biografia}</div>
         </div>
       </div>
     </div>
