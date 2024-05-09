@@ -16,8 +16,8 @@ const ContainerPerfil = ({dadosPerfil}) => {
           </div>
         </div>
         <div className='infos'>
-          <label className='categoria'>Nome</label>
-          <div className='dados'>{dadosPerfil.nome}</div>
+          <label className='categoria-especial'>Nome</label>
+          <div className='dados-especial'>{dadosPerfil.nome}</div>
           <label className='categoria'>Idade</label>
           <div className='dados'>{dadosPerfil.idade}</div>
           <label className='categoria'>Rua</label>

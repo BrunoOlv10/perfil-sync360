@@ -117,7 +117,7 @@ const handleImagemChange = (event) => {
             <h2>Atualizar Perfil</h2>
             <form onSubmit={handleSubmit}>
               <div className='infos'>
-                <label htmlFor="imagem" className='categoria'>Imagem</label>
+                <label htmlFor="imagem" className='categoria-especial'>Imagem</label>
                 <input type="file" className='enviar-imagem' name='imagem' accept="image/*" onChange={handleImagemChange}/>
                 <label htmlFor="name" className='categoria'>Nome</label>
                 <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='nome' value={dadosFormulario.nome} onChange={handleChange}/>
