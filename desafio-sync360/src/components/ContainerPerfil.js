@@ -7,7 +7,7 @@ const ContainerPerfil = ({dadosPerfil}) => {
   return (
     <div className='container inicio'>
       <div className='card'>
-      <h2>Olá, {dadosPerfil.nome ? dadosPerfil.nome : 'usuário'}!</h2>
+      <h2>Olá, {dadosPerfil.nome ? dadosPerfil.nome : 'Sync360'}!</h2>
         <div className='img-degrade'>
           <div className='img'>
           {dadosPerfil.imagem && dadosPerfil.imagem !== 'null' && (

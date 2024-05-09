@@ -66,13 +66,34 @@ const handleKeyPress = (event) => {
   }
 };
 
-  const handleImagemChange = (event) => {
-    const imagemSelecionada = event.target.files[0]
-    setDadosFormulario({
-      ...dadosFormulario,
-      imagem: URL.createObjectURL(imagemSelecionada),
-    })
+const handleImagemChange = (event) => {
+  const imagemSelecionada = event.target.files[0];
+  const reader = new FileReader();
+
+  reader.onloadend = () => {
+    if (reader.readyState === FileReader.DONE) {
+      const blob = new Blob([reader.result], { type: imagemSelecionada.type });
+      const image = new Image();
+
+      image.onload = () => {
+        setDadosFormulario({
+          ...dadosFormulario,
+          imagem: URL.createObjectURL(imagemSelecionada),
+        });
+      };
+
+      image.onerror = () => {
+
+      };
+
+      image.src = URL.createObjectURL(blob);
+    }
+  };
+
+  if (imagemSelecionada) {
+    reader.readAsArrayBuffer(imagemSelecionada);
   }
+};
 
   const handleSubmit = (event) => {
     event.preventDefault()
