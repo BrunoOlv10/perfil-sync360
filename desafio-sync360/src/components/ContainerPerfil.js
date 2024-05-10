@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
 import '../styles/components/ContainerPerfil.sass';
 import '../styles/components/App.sass'
 import '../styles/components/MediaQueries.sass'
 
 const ContainerPerfil = ({dadosPerfil}) => {
+  const perfilRef = useRef(null);
+
+  const limparPerfil = () => {
+    const divs = perfilRef.current.querySelectorAll('.dados-especial, .dados, .biografia-especial');
+    divs.forEach(div => div.textContent = '');
+  };
+
   return (
     <div className='container'>
       <div className='card'>
@@ -16,7 +23,7 @@ const ContainerPerfil = ({dadosPerfil}) => {
           )}
           </div>
         </div>
-        <div className='infos'>
+        <div className='infos' ref={perfilRef}>
           <label className='categoria-especial'>Nome</label>
           <div className='dados-especial'>{dadosPerfil.nome}</div>
           <label className='categoria'>Idade</label>
@@ -32,6 +39,7 @@ const ContainerPerfil = ({dadosPerfil}) => {
           </div>
             <div className='biografia-especial'>{dadosPerfil.biografia}</div>
         </div>
+            <button onClick={limparPerfil}>Limpar Dados</button>
       </div>
     </div>
   )

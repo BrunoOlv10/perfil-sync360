@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 import '../styles/components/App.sass'
 import '../styles/components/ContainerPerfil.sass'
@@ -35,7 +35,7 @@ const ContainerForm = ({atualizarPerfil}) => {
             ...dadosFormulario,
             [name]: value.length <= 3 ? value : value.slice(0, 3),
           });
-        }, 40000);
+        }, 4000);
       } else {
         setErrorMessage('');
         setValidForm(true);
@@ -57,7 +57,6 @@ const handleCheck = (event) => {
   if (errorMessage) {
     return;
   }
-  // console.log('Formulário enviado');
   handleSubmit(event)
 };
 
@@ -98,7 +97,6 @@ const handleImagemChange = (event) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // console.log('Dados do formulário enviados:', dadosFormulario)
     if (validForm) {
       atualizarPerfil(dadosFormulario)
     }
@@ -106,10 +104,12 @@ const handleImagemChange = (event) => {
   
   const handleAtualizar = (event) => {
     event.preventDefault()
+
     if (parseInt(dadosFormulario.idade <= 130)) {
       handleSubmit(event)
     }
     handleCheck(event)
+    setDadosFormulario({ ...initialValues });
   }
 
   return (
