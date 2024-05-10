@@ -10,6 +10,8 @@ const ContainerPerfil = ({dadosPerfil}) => {
   const limparPerfil = () => {
     const divs = perfilRef.current.querySelectorAll('.dados-especial, .dados, .biografia-especial');
     divs.forEach(div => div.textContent = '');
+
+    window.location.reload();
   };
 
   return (
