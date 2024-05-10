@@ -25,6 +25,7 @@ const ContainerForm = ({atualizarPerfil}) => {
 
   const [validForm, setValidForm] = useState(true);
 
+
   const handleChange = (event) => {
     const {name, value} = event.target
     if (name === 'idade') {
@@ -38,7 +39,8 @@ const ContainerForm = ({atualizarPerfil}) => {
             ...dadosFormulario,
             [name]: value.length <= 3 ? value : value.slice(0, 3),
           });
-        }, 4000);
+          window.location.reload();
+        }, 3000);
       } else {
         setErrorMessage('');
         setValidForm(true);
@@ -100,6 +102,7 @@ const handleImagemChange = (event) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     if (validForm) {
       atualizarPerfil(dadosFormulario)
     }
@@ -143,19 +146,19 @@ const handleImagemChange = (event) => {
             <h2 className='titulo-perfil'>Atualizar Perfil</h2>
             <form onSubmit={handleSubmit}>
               <div className='infos'>
-                <label htmlFor="imagem" className='categoria-especial'>Imagem</label>
-                <input type="file" className='enviar-imagem' name='imagem' accept="image/*" onChange={handleImagemChange}/>
-                <label htmlFor="name" className='categoria'>Nome</label>
-                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='nome' value={dadosFormulario.nome} onChange={handleChange}/>
+                <label htmlFor="imagem" className='categoria-especial'>Foto</label>
+                <input type="file" className='enviar-imagem' name='imagem' id='imagem' accept="image/*" onChange={handleImagemChange}/>
+                <label htmlFor="nome" className='categoria'>Nome</label>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='nome' id='nome' value={dadosFormulario.nome} onChange={handleChange}/>
                 <label htmlFor="idade" className='categoria'>Idade</label>
-                <input type="number" placeholder='Idade real' className='dados-escritos' name='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
+                <input type="number" placeholder='Idade real' className='dados-escritos' name='idade' id='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
                 {errorMessage && <div className='container-error'><span className="error-tooltip">{errorMessage}</span></div>}
                 <label htmlFor="rua" className='categoria'>Rua</label>
-                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='rua' value={dadosFormulario.rua} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='rua' id='rua' value={dadosFormulario.rua} onChange={handleChange}/>
                 <label htmlFor="bairro" className='categoria'>Bairro</label>
-                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='bairro' value={dadosFormulario.bairro} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='bairro' id='bairro' value={dadosFormulario.bairro} onChange={handleChange}/>
                 <label htmlFor="estado" className='categoria'>Estado</label>
-                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='estado' value={dadosFormulario.estado} onChange={handleChange}/>
+                <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='estado' id='estado' value={dadosFormulario.estado} onChange={handleChange}/>
               </div>
                 <div className='container-biografia'>
                   <div className="biografia-form">
@@ -163,7 +166,7 @@ const handleImagemChange = (event) => {
                       Biografia
                     </label>
                   </div>
-                    <textarea name="biografia" placeholder='Escreva uma breve biografia' maxLength='1600' value={dadosFormulario.biografia} onChange={handleChange}></textarea>
+                    <textarea placeholder='Escreva uma breve biografia' maxLength='1600' name="biografia" id='biografia' value={dadosFormulario.biografia} onChange={handleChange}></textarea>
                     <button onClick={handleAtualizar}>Atualizar</button>
                 </div>
             </form>
