@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 
+import {firestore} from '../firebase';
+import {collection, addDoc} from "firebase/firestore";
+
 import '../styles/components/App.sass'
 import '../styles/components/ContainerPerfil.sass'
 import '../styles/components/ContainerForm.sass'
@@ -102,15 +105,37 @@ const handleImagemChange = (event) => {
     }
   }
   
+  const handleData = async (event) => {
+      event.preventDefault();
+    
+      if (!validForm) {
+        return;
+      }
+    
+      try {
+        const docRef = await addDoc(collection(firestore, "perfis"), dadosFormulario);
+        console.log("Documento adicionado com ID: ", docRef.id);
+    
+        setDadosFormulario({ ...initialValues });
+    
+        atualizarPerfil(dadosFormulario);
+      } catch (error) {
+        console.error("Erro ao adicionar documento: ", error);
+      }
+    };
+
   const handleAtualizar = (event) => {
+    handleData(event)
     event.preventDefault()
 
     if (parseInt(dadosFormulario.idade <= 130)) {
       handleSubmit(event)
     }
+
     handleCheck(event)
     setDadosFormulario({ ...initialValues });
   }
+
 
   return (
     <div className='container'>
