@@ -35,7 +35,7 @@ const ContainerForm = ({atualizarPerfil}) => {
             ...dadosFormulario,
             [name]: value.length <= 3 ? value : value.slice(0, 3),
           });
-        }, 4000);
+        }, 40000);
       } else {
         setErrorMessage('');
         setValidForm(true);
@@ -112,21 +112,10 @@ const handleImagemChange = (event) => {
     handleCheck(event)
   }
 
-  const removerMensagem = () => {
-    const inputs = document.querySelectorAll('.enviar-imagem');
-    inputs.forEach(input => {
-      input.setAttribute('title', '');
-    });
-  };
-
-  useEffect(() => {
-    removerMensagem();
-  }, []);
-
   return (
     <div className='container'>
         <div className='card'>
-            <h2>Atualizar Perfil</h2>
+            <h2 className='titulo-perfil'>Atualizar Perfil</h2>
             <form onSubmit={handleSubmit}>
               <div className='infos'>
                 <label htmlFor="imagem" className='categoria-especial'>Imagem</label>
