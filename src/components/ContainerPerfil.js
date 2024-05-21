@@ -25,16 +25,16 @@ const ContainerPerfil = ({dadosPerfil}) => {
           )}
           </div>
         </div>
-        <div className='infos-perfil' ref={perfilRef}>
+        <div className='infos' ref={perfilRef}>
           <label className='categoria-especial'>Nome</label>
           <div className='dados-especial'>{dadosPerfil.nome}</div>
-          <label className='categoria'>Idade</label>
+          <label className='categoria-perfil'>Idade</label>
           <div className='dados'>{dadosPerfil.idade}</div>
-          <label className='categoria'>Rua</label>
+          <label className='categoria-perfil'>Rua</label>
           <div className='dados'>{dadosPerfil.rua}</div>
-          <label className='categoria'>Bairro</label>
+          <label className='categoria-perfil'>Bairro</label>
           <div className='dados'>{dadosPerfil.bairro}</div>
-          <label className='categoria'>Estado</label>
+          <label className='categoria-perfil'>Estado</label>
           <div className='dados'>{dadosPerfil.estado}</div>
           <div className='biografia-perfil'>
             <label>Biografia</label>

@@ -145,19 +145,19 @@ const handleImagemChange = (event) => {
         <div className='card'>
             <h2 className='titulo-perfil'>Atualizar Perfil</h2>
             <form onSubmit={handleSubmit}>
-              <div className='infos-form'>
+              <div className='infos'>
                 <label htmlFor="imagem" className='categoria-especial'>Foto</label>
                 <input type="file" className='enviar-imagem' name='imagem' id='imagem' accept="image/*" onChange={handleImagemChange}/>
-                <label htmlFor="nome" className='categoria'>Nome</label>
+                <label htmlFor="nome" className='categoria-form'>Nome</label>
                 <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='nome' id='nome' value={dadosFormulario.nome} onChange={handleChange}/>
-                <label htmlFor="idade" className='categoria'>Idade</label>
+                <label htmlFor="idade" className='categoria-form'>Idade</label>
                 <input type="number" placeholder='Idade real' className='dados-escritos' name='idade' id='idade' value={dadosFormulario.idade} onChange={handleChange} onKeyPress={handleKeyPress}/>
                 {errorMessage && <div className='container-error'><span className="error-tooltip">{errorMessage}</span></div>}
-                <label htmlFor="rua" className='categoria'>Rua</label>
+                <label htmlFor="rua" className='categoria-form'>Rua</label>
                 <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='rua' id='rua' value={dadosFormulario.rua} onChange={handleChange}/>
-                <label htmlFor="bairro" className='categoria'>Bairro</label>
+                <label htmlFor="bairro" className='categoria-form'>Bairro</label>
                 <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='bairro' id='bairro' value={dadosFormulario.bairro} onChange={handleChange}/>
-                <label htmlFor="estado" className='categoria'>Estado</label>
+                <label htmlFor="estado" className='categoria-form'>Estado</label>
                 <input type="text" placeholder='Max 19 caracteres' maxLength='19' className='dados-escritos' name='estado' id='estado' value={dadosFormulario.estado} onChange={handleChange}/>
               </div>
                 <div className='container-biografia'>
