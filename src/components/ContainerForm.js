@@ -145,7 +145,7 @@ const handleImagemChange = (event) => {
         <div className='card'>
             <h2 className='titulo-perfil'>Atualizar Perfil</h2>
             <form onSubmit={handleSubmit}>
-              <div className='infos'>
+              <div className='infos-form'>
                 <label htmlFor="imagem" className='categoria-especial'>Foto</label>
                 <input type="file" className='enviar-imagem' name='imagem' id='imagem' accept="image/*" onChange={handleImagemChange}/>
                 <label htmlFor="nome" className='categoria'>Nome</label>
