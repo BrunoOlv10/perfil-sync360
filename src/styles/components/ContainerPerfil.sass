@@ -1,11 +1,13 @@
 @use '../../variables'
 
-.img-degrade 
+.img-degrade, .img, img
     height: 6.5rem
     width: 6.5rem
+    border-radius: 50%
+
+.img-degrade 
     background: variables.$gradient
     border: 5px solid transparent
-    border-radius: 50%
     transition: transform .5s
     margin-bottom: 1rem
 
@@ -13,11 +15,8 @@
         transform: scale(1.1)
 
 .img, img
-    height: 6.5rem
-    width: 6.5rem
     background-color: #1d1d1d
     position: relative
-    border-radius: 50%
 
 .categoria-perfil
    margin-top: 3.2rem
@@ -32,10 +31,10 @@
     width: 8.5rem
 
 .dados
-    margin: 2.5rem 0 0 0.5rem
+    margin: 2.5rem 0 0 0rem
 
 .dados-especial
-    margin: 1rem 0 0 0.5rem
+    margin: 1rem 0 0 0rem
 
 .biografia-perfil
     width: 100%
@@ -50,4 +49,4 @@
     min-height: 10vw
     max-width: 23vw
     margin-top: 3.5rem
-    margin-left: -4vw
+    margin-left: -5vw

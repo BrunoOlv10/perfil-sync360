@@ -1,21 +1,48 @@
-@media only screen and (max-width: 550px)
-    .App
-        // width: 90vw
-        // justify-content: space-between
+@media only screen and (max-width: 850px)
+    .infos
         display: flex
-        justify-content: center
-        gap: 40px
+        flex-direction: column
+        align-items: center
+    
+    .categoria-perfil, .categoria-form
+        margin-top: 1.7rem
+
+    .dados, .dados-escritos
+        margin-top: 1rem
+
+    .enviar-imagem
+        margin-top: 1rem
+
+    .biografia-especial
+        min-width: 20vw
+        margin: 1rem 0 0 0
+
+    .biografia-form
+        width: 154px
+        text-align: center
+
+    textarea
+        min-width: 20vw
+    
+@media only screen and (max-width: 550px)
+    // .App
+    //     display: flex
+    //     justify-content: center
+    //     gap: 40px
 
     .infos
         display: flex
         flex-direction: column
-        width: 35vw
+
+    .enviar-imagem
+        margin: 1rem 0 0 0
 
     .categoria
         margin-top: 1.5rem
 
     .dados, .dados-especial
-        margin: 1rem 0 0 0
+        width: 7rem
+        margin: 1rem 0 0
 
     .dados-especial, .dados
         justify-content: center
@@ -31,27 +58,42 @@
         margin: 1rem 0 0 0
         width: 31vw
 
-    .enviar-imagem
-        margin: 1rem 6vw 0 6.5vw
-        color: #111
-        width: 94%
-
     .dados-escritos
-        margin: 1rem 0 0 1rem
+        width: 7rem
+        margin: 1rem 0 0 0rem
 
     .container-error
         margin: 42.5vh 0 0 3.5vw
         width: 9rem
+        
 
 @media only screen and (max-width: 450px)
-    .App
-        display: flex
-        justify-content: center
-        gap: 15px
-    
-    .enviar-imagem
-        margin: 1rem auto 0 4.5vw
+    // .App
+    //     display: flex
+    //     justify-content: center
+    //     gap: 15px
+
+    .titulo-perfil
+        margin-bottom: 0
+
+    .img-degrade, .img, img
+        height: 5rem
+        width: 5rem
+
+    .categoria-especial
+        margin-top: 1rem
+
+    .dados-escritos
+        width: 6rem
+
+    .dados, .dados-especial
+        width: 5.5rem
+        margin: 1rem 0 0
 
     .container-error
         margin: 16.5rem 0 0 2.5vw
         width: 9rem
+
+    textarea
+        min-height: 16vw
+        margin-top: 1rem
